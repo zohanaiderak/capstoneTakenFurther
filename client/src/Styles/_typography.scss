@@ -1,0 +1,70 @@
+@font-face{
+    font-family: "Avenir-Bold";
+    src: url("../assets/_global-font/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Bold.otf"),
+         url("../assets/_global-font/AvenirNextProLT/Alternative-files/Linotype\ -\ Avenir\ Next\ LT\ Pro\ Bold.ttf");
+}
+
+@font-face{
+    font-family: "Avenir";
+    src: url("../assets/_global-font/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Regular.otf"),
+         url("../assets/_global-font/AvenirNextProLT/Alternative-files/Linotype\ -\ Avenir\ Next\ LT\ Pro.ttf");
+}
+
+@font-face{
+    font-family: "Avenir-Medium";
+    src: url("../assets/_global-font/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Medium.otf"),
+         url("../assets/_global-font/AvenirNextProLT/Alternative-files/Linotype\ -\ Avenir\ Next\ LT\ Pro\ Medium.ttf");
+}
+
+@font-face{
+    font-family: "Avenir-demi";
+    src: url("../assets/_global-font/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Demi.otf"),
+         url("../assets/_global-font/AvenirNextProLT/Alternative-files/Linotype\ -\ Avenir\ Next\ LT\ Pro\ Demi.ttf");
+}
+
+@font-face{
+    font-family: "Avenir-Light";
+    src: url("../assets/_global-font/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Light.otf"),
+         url("../assets/_global-font/AvenirNextProLT/Alternative-files/Linotype\ -\ Avenir\ Next\ LT\ Pro\ Light.ttf");
+}
+
+@mixin h1-hero{
+    font-family: "Avenir-Bold";
+    font-size: 24px; 
+    line-height: 32px;
+    @include tablet{
+        font-size: 60px; 
+        line-height: 68px;
+    }
+}
+
+@mixin h1-mobile{
+    font-family: "Avenir-Bold";
+    font-size: 24px; 
+    line-height: 32px;
+    @include tablet{
+        font-size: 36px;
+        line-height: 44px;
+    }
+}
+
+@mixin quote{
+    font-family: $font-demi;
+    font-size: 16px; 
+    line-height: 22px;
+    @include tablet{
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+@mixin h4-mobile{
+    font-size: 13px; 
+    line-height: 18px;
+    font-family: $font-Light;
+    @include tablet{
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+    

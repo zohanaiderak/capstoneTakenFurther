@@ -1,0 +1,463 @@
+@import '../../Styles/_mixins';
+@import '../../Styles/_typography';
+@import '../../Styles/_variables';
+
+// desktop padding on left and right have been changed from 180px to 60px each through calculation
+/* for forms since tablet dimensiones were not given i have 
+   set desktop dimeensions to tablet so that desktop inherits the 
+   tablet and the tablet layout looks good
+*/
+
+*{
+  padding: 0;
+  margin: 0;  
+  font-family: "Avenir"; 
+}
+  
+.header__nav{
+  background-color: $primary-color;
+  height: 80px;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  @include tablet{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .nav__div{
+    margin:auto;
+    padding: 0 16px;
+    @include hover;
+    @include mobile{
+      margin: 5px auto 16px;
+    }
+    @include tablet{
+      margin: 0;      //to zero out margin from mobile-site
+      padding-left: 24px;
+      padding-right: 0;  //to zero out right padding from mobile-site
+    }
+    @include desktop{
+      padding-left: 60px;
+    }
+  }
+  .nav__div2{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    &--link1{
+      @include div2;   //hover not applied here as it is current page also applying it creates disruption in border-bottom and requires additional code
+      border-bottom: 2px solid $secondary-color;
+      color: $secondary-color;
+    }
+    &--link2{
+      @include hover;
+      @include div2;
+      color: #e1e1e1;
+    }
+  }
+}
+
+.hero{
+  // background-image: url('../Assets/Images/austin-neill-1t0yY9lSpyE-unsplash.jpg');
+  background-size: cover;
+  display: flex;
+  @include hero-height;
+  &__head{
+    display: flex;
+    align-items: center;
+    @include padding;
+    background: rgba($color: #323232, $alpha: 0.5);
+    width: 100%;
+    color: $secondary-color;
+    @include h1-hero;
+    @include hero-height;
+  }
+}
+
+.article{
+  @include padding;
+  display: flex;
+  flex-direction: column;
+  &__header{
+    align-self: flex-start;
+    @include h1-mobile;
+    padding: 32px 0 24px;
+    @include desktop{
+      padding: 48px 0;
+    }
+  }
+  &__img{
+    @include section-center;
+    margin-bottom: 24px;
+    @include article-img;
+    @include desktop{
+      margin-bottom: 48px ;
+    }
+  }
+  &__quote{
+    @include section-center;
+    font-family: $font-demi;
+    br{
+      display: none;
+    }
+    @include desktop{
+      padding: 0 92px;
+      br{
+        display: inline;
+      }
+    }
+  }
+  .quote{
+    padding-bottom: 32px;
+    @include quote;
+    @include desktop{
+      padding-bottom:40px ;
+    }
+  }
+  .name{
+    font-family: $font-demi;
+  }
+  .musicians{
+    padding: 40px 0 24px;
+    @include quote;
+    @include desktop{
+      padding: 56px 92px 32px;
+    }
+  }
+  &__para{
+    @include section-center;
+    display: flex;
+    flex-direction: column;
+    color: #323232;
+    @include h4-mobile;
+    @include tablet{
+      display: flex;
+      flex-direction: row;  
+    }
+    @include desktop{
+      padding: 0 92px 48px;
+    }
+  }
+  .para1{
+    padding-bottom: 24px;
+    @include tablet{
+      padding-right: 12px;
+    }
+    @include desktop{
+      padding:0 20px 0 0 ;    //this is done to zero out padding bottom from the element and padding in desktop is through parent para class
+      width: 420px;
+    }
+  }
+  .para2{
+    padding-bottom: 40px;
+    @include tablet{
+      padding-left: 12px;
+    }
+    @include desktop{
+      padding:0 0 0 20px;    //this is done to zero out padding bottom from the element and padding in desktop is through parent para class
+      width: 420px;
+    }
+  }
+}
+
+.section{
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-color;
+  padding-bottom: 16px;
+  &__head{
+    align-self: flex-start;
+    @include h1-mobile;
+    @include mobile{
+      padding: 32px 16px 24px;
+    }
+    @include tablet{
+      padding: 32px 0 24px 24px;
+    }
+    @include desktop{
+      padding:48px 0 64px 60px;
+    }
+  }
+  .img{
+    align-self: center;
+    @include mobile{
+      padding:0 16px;
+      max-width: 380px;
+    }
+    @include tablet{
+      padding:0 24px 24px;
+      display: flex;
+      justify-content: space-between;
+    }
+    @include desktop{
+      padding:0 0 24px 0;
+      width: 1080px;
+    }
+    &__styl{
+      width: 100%;
+      @include greyscale;
+      @include mobile{
+        display: flex;
+        padding-bottom: 16px;
+        height: 162px;
+      }
+      @include tablet{
+        width: 31.1111111%;
+        max-width: 344px;
+        height: 16.40625vw;
+        max-height: 193px;
+      }
+      @include desktop{
+        height: 193px;
+        width: 344px;
+      }
+    }
+  }
+}
+
+.section2{
+  padding-bottom: 40px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  &__head{
+    @extend .section__head;
+  }
+}
+
+.comments{
+  @include padding;
+  width: 320px;
+  display: flex;
+  box-sizing: border-box;
+  align-self: center;
+  justify-content: space-between;
+  margin-top: 16px;    //to make the top  margin 40px
+  padding-bottom: 32px;
+  @include tablet{
+    width: 528px;
+    margin-top: 0px;    //to fix spacing
+    padding: 0 ;        //to fix spacing
+  }
+  &__face{
+    margin-top: 15px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    @include tablet{
+      margin-top: 25px;
+      width: 48px;
+      height: 48px;
+    }
+  }
+  &__form{
+    width: 224px;
+    display: flex;
+    flex-direction: column;
+    @include tablet{
+      width: 460px;
+      margin-bottom: 24px;
+    }
+    &--input{
+      padding: 10px;
+      border: 2px solid $form-color;
+      border-radius: 5px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      @include tablet{
+          margin-bottom: 24px;
+          height: 48px;
+          padding: 16px ;
+      }
+      &:focus{
+        border: 2px solid $primary-color;
+        border-radius: 5px;
+        outline: none;
+      }
+    }
+    &--label{
+      @include form-title;
+    }
+    &--submit{
+      background-color: $primary-color ;
+      color: $secondary-color ;
+      padding: 10px 10px;
+      border: none;
+      border-radius: 4px;
+      &:focus{
+        outline: 0;
+        border-radius: 2px;
+        box-shadow: inset 0 40px -4px #000000;
+        filter: blur(32%);
+      }
+      &:hover{
+        background-color: black;
+      }
+      @include tablet{
+        width: 160px;
+        height: 48px;
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+#textArea{
+  height: 96px;
+  @extend .comments__form--input;
+}
+
+.div__form{
+  overflow-y:scroll;
+  height: 450px;
+  margin: 0 16px;
+  width: 288px;
+  border-top: 1px solid $form-color;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  @include tablet{
+    width: 528px;
+  }
+}
+.post{
+  @include h4-mobile;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $form-color;
+  @include tablet{
+    display: flex;
+    justify-content: flex-start;
+  }
+  &__dp{
+    background-color: $form-color;
+    @extend .comments__face;
+    margin: 24px 16px 0 0;
+  }
+  &__comment{
+    width: 240px;
+    padding:24px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include tablet{
+      width: 480px;
+    }
+    &--name{
+      font-weight: bold;
+    }
+    &--text{
+      padding-top: 16px;
+      display: block; 
+      width:100%;
+      padding-right: 5px;
+      @include tablet{
+        width: 400px; 
+      }
+    }  
+  } 
+}
+
+.timestamp{
+  font-weight: normal;
+  color: $form-color;
+  padding-right: 5px;
+}
+
+.ftr{
+  @include padding;
+  background-color: $primary-color;
+  color: $secondary-color;
+  .footer{
+    @include tablet{
+      display:flex;
+    }
+    @include desktop{
+      padding: 8px 0 16px;   //8px and 16px to add padding to make the overall padding to meet requirements
+    }
+    &__head{
+        @include h1-mobile;
+        font-size: 36px;
+        @include footer-spacing;
+      }
+      &__icon{
+        @include tablet{
+          padding: 40px;
+          align-self: center;
+        } 
+        &--img{
+          padding-right:32px;   
+        }
+      }
+      &__site-name{
+        display: none;
+        @include tablet{
+          display: flex;
+          align-self: center;
+          position: absolute;
+          right: 24px;
+        }
+        @include desktop{
+          right: 60px;
+        }
+        img{
+          height: 24px;
+          width: 120px;
+        }
+      }
+    }
+    .contact{
+      @include tablet{
+        display: flex;
+        justify-content: space-between;
+      }
+      @include desktop{
+        display: flex;
+        justify-content: flex-start;
+      }
+      &__mgmt:nth-of-type(odd){
+        @include footer-spacing;
+        @include desktop{
+          padding:0;   //to dissolve the padding
+        }
+      }
+      &__mgmt{
+        @include tablet{
+          @include footer-spacing;
+        }
+        @include desktop{
+          padding: 0 60px;   //to dissolve the padding
+        }
+        &--name{
+          font-family: $font-medium;
+        }
+        &--add{
+          @include h4-mobile;
+          padding:24px 0;
+        }
+        &--email{
+          @include h4-mobile;
+          color: $secondary-color;
+          text-decoration: none;
+        }
+      }
+    }
+  .copyright{
+    padding-bottom: 40px;
+    @include h4-mobile; 
+    @include tablet{
+      display: flex;
+      br{
+        display: none;
+      }
+    }
+    @include desktop{
+      padding-top: 40px ;
+    }
+  }
+}

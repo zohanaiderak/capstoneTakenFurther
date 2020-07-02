@@ -1,0 +1,17 @@
+@import '../../Styles/mixins';
+@import '../../Styles/typography';
+@import '../../Styles/variables';
+
+.admin{
+    &__phones{
+        &--button{
+            margin: 40px;
+        }
+    }
+    &__accessories{
+        &--button{
+            margin: 40px;
+        }
+    }
+}
+
