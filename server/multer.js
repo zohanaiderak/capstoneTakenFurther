@@ -22,9 +22,20 @@ router.post('/',function(req, res) {
                return res.status(500).json(err)
            }
       return res.status(200).send(req.file)
-
     })
-
 });
+
+router.patch('/',function(req, res) {
+     
+  upload(req, res, function (err) {
+         if (err instanceof multer.MulterError) {
+             return res.status(500).json(err)
+         } else if (err) {
+             return res.status(500).json(err)
+         }
+    return res.status(200).send(req.file)
+  })
+});
+
 
 module.exports = router;

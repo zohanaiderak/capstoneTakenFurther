@@ -1,10 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import './AdminPhones.scss';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-class AdminPhones extends React.Component{
+class EditForm extends React.Component{
     state={
         id : "",
         name : "",
@@ -48,7 +47,7 @@ class AdminPhones extends React.Component{
         const data = new FormData()
         data.append('file', this.state.selectedFile)
         console.log(this.state.selectedFile);
-        axios.post(`${API_URL}/upload`, data)
+        axios.patch(`${API_URL}/upload`, data)
         .then(()=>alert("posted"))
         .catch((err)=>alert(err));
         const phoneData = {
@@ -58,7 +57,7 @@ class AdminPhones extends React.Component{
             images: this.state.images
         };
         console.log(phoneData);
-        axios.post(`${API_URL}/phones` , phoneData)
+        axios.patch(`${API_URL}/phones/${this.state.id}` , phoneData)
             .then(()=>alert("posted phones data"))
             .catch((err)=>alert(err))
     }
@@ -67,7 +66,7 @@ class AdminPhones extends React.Component{
         return(
             <form className="form" >
                 <div className="form__container">
-                <h2 className="addPhone">ADD</h2>
+                <h2 className="addPhone">EDIT</h2>
                 <span className="input-container"><label className ="uploadInput">Id :</label>
                     <input className="uploadName" name="id" onChange={this.changeInput}></input></span>
                 <span className="input-container"><label className ="uploadInput">Name :</label>
@@ -83,4 +82,4 @@ class AdminPhones extends React.Component{
     }
 }
 
-export default AdminPhones;
+export default EditForm;

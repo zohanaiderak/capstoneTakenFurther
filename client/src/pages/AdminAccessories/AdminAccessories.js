@@ -58,6 +58,7 @@ class AdminAccessories extends React.Component{
         return(
             <form className="form" >
                 <div className="form__container">
+                <h2 className="addPhone">ADD</h2>
                 <span className="input-container"><label className ="uploadInput">Id :</label>
                     <input className="uploadName" name="phoneid" onChange={this.changeInput}></input>
                 </span>

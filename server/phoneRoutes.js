@@ -38,6 +38,15 @@ router.get('/:phoneId', async (req, res) => {
     }
     });
 
+  router.patch('/:phoneId', async (req,res)=>{
+    try{
+      const updatedPhone = await Post.updateOne({id : req.params.phoneId},{$set:{...req.body}});
+      res.status(200).json(updatedPhone)
+    }catch(err){
+      console.log(err);
+    }
+  })
+
   router.delete("/:phoneId",(req,res)=>{
     if(phones.find(phone=> {return phone.id === req.params.phoneId}
     )){
