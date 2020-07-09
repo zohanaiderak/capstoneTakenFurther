@@ -58,7 +58,7 @@ class AdminPhones extends React.Component{
             images: this.state.images
         };
         console.log(phoneData);
-        axios.post(`${API_URL}/phones` , phoneData)
+        axios.post(`${API_URL}/phone` , phoneData)
             .then(()=>alert("posted phones data"))
             .catch((err)=>alert(err))
     }

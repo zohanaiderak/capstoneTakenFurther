@@ -33,7 +33,7 @@ class Accessories extends React.Component{
     }
 
     accessories(id){
-        axios.get(`${API_URL}/phones/${id}`)
+        axios.get(`${API_URL}/phone/${id}`)
         .then(res=>{
             this.setState({
                 phone: res.data,

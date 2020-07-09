@@ -49,7 +49,7 @@ class AdminAccessories extends React.Component{
         .catch((err)=>alert(err));
         const accessoryData = this.state;
         console.log(accessoryData);
-        axios.post(`${API_URL}/accessories` , accessoryData)
+        axios.post(`${API_URL}/accessor` , accessoryData)
             .then(()=>alert("posted accessory data"))
             .catch((err)=>alert(err))
     }

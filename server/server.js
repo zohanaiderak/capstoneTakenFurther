@@ -13,6 +13,12 @@ const contact = require('./contact');
 const fs = require('fs');
 var path = require('path');
 
+app.use(express.static(path.join(__dirname , 'build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 app.use(cors());
 
 app.use(express.json());
@@ -21,9 +27,9 @@ app.use(bodyParser.json());
 
 app.use(express.static('assets'));
 
-app.use('/phones', phoneRoutes );
+app.use('/phone', phoneRoutes );
 
-app.use('/accessories' , accessoryRoutes);
+app.use('/accessor' , accessoryRoutes);
 
 app.use('/send' , send);
 
@@ -37,7 +43,5 @@ mongoose.connect(
   ()=>{
   console.log("connected to db!")
 })
-
-app.use(express.static(__dirname + '../build'));
 
 app.listen(port, () => console.log(`listening on http://localhost:${port}`));

@@ -49,7 +49,7 @@ class EditAccessoriesForm extends React.Component{
         .catch((err)=>alert(err));
         const accessoryData = this.state;
         console.log(accessoryData);
-        axios.patch(`${API_URL}/accessories` , accessoryData)
+        axios.patch(`${API_URL}/accessor` , accessoryData)
             .then(()=>alert("posted accessory data"))
             .catch((err)=>alert(err))
     }

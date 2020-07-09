@@ -17,7 +17,7 @@ class Order extends React.Component{
     }
 
     accessoryName(id){
-        axios.get(`${API_URL}/accessories/${id}`)
+        axios.get(`${API_URL}/accessor/${id}`)
         .then(res=>{
             this.setState({
                 accessory: res.data,
@@ -49,6 +49,7 @@ class Order extends React.Component{
         axios.post(`${API_URL}/send`, this.state)
             .then(()=>{
                 alert("ORDER SUBMITTED")
+                console.log(this.state);
             })
             .catch(()=> alert('Please Try Again'))
         this.setState({

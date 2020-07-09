@@ -57,7 +57,7 @@ class EditForm extends React.Component{
             images: this.state.images
         };
         console.log(phoneData);
-        axios.patch(`${API_URL}/phones/${this.state.id}` , phoneData)
+        axios.patch(`${API_URL}/phone/${this.state.id}` , phoneData)
             .then(()=>alert("posted phones data"))
             .catch((err)=>alert(err))
     }

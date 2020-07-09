@@ -8,8 +8,8 @@
     "npm": "6.x"
   },
   "scripts": {
-    "client": "npm start --prefix client",
     "start": "npm start --prefix server",
+    "client": "npm start --prefix client",
     "server": "nodemon index --prefix server",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm install --prefix server && npm run build --prefix client"

@@ -12,7 +12,7 @@ class EditAccessoryByPhone extends React.Component{
     }
 
     componentDidMount(){
-        axios.get(`${API_URL}/phones`)
+        axios.get(`${API_URL}/phone`)
         .then(res => {
             console.log(res.data);
             this.setState({
