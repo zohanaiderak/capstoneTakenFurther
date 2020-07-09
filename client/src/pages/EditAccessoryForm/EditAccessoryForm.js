@@ -20,7 +20,7 @@ class EditAccessoriesForm extends React.Component{
     changeHandler=event=>{
         this.setState({
         selectedFile : event.target.files[0],
-        image : `http://localhost:8080/images/${event.target.files[0].name}`
+        image : `${API_URL}/images/${event.target.files[0].name}`
         })
     }
 

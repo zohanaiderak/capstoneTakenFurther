@@ -31,7 +31,7 @@ class EditForm extends React.Component{
     changeHandler=event=>{
         this.setState({
         selectedFile : event.target.files[0],
-        images : `http://localhost:8080/images/${event.target.files[0].name}`
+        images : `${API_URL}/images/${event.target.files[0].name}`
         })
     }
 
