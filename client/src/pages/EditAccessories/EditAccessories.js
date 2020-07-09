@@ -2,11 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import AccessoryList from '../../Components/Accessory/Accessory';
-import './Accessory.scss';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-class Accessories extends React.Component{
+class EditAccessories extends React.Component{
     state={
         phone: {},
         accessories : [],
@@ -60,7 +59,7 @@ class Accessories extends React.Component{
                 {
                     this.state.accessories.map(accessory=>{
                         return (
-                            <Link to={`/phones/${accessory.phoneid}/${accessory.id}`} key={accessory.id} className={this.state.searchValue.includes(accessory) ? 'link show' : 'hidden'}>
+                            <Link to={`/admin/accessories/editAccessory/${accessory.phoneid}/${accessory.id}`} className={this.state.searchValue.includes(accessory) ? 'link show' : 'hidden'}>
                             <AccessoryList
                                 id= {accessory.id}
                                 phoneid = {accessory.phoneid}
@@ -80,4 +79,4 @@ class Accessories extends React.Component{
     }
 }
 
-export default Accessories;
+export default EditAccessories;

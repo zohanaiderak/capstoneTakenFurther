@@ -2,11 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import PhoneList from '../../Components/PhonesList/PhonesList';
-import './Phones.scss'
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-class Phones extends React.Component{
+class EditAccessoryByPhone extends React.Component{
     state={
         phones : [],
         searchValue : []
@@ -40,10 +39,14 @@ class Phones extends React.Component{
         })
     }
 
+    // handleClick = () =>{
+
+    // }
+
     phonesList(){
         const phonesCard = this.state.phones.map(phone => {
             return (
-                <Link to={`/phones/${phone.id}`} key={phone.id} className={this.state.searchValue.includes(phone) ? 'link show' : 'hidden'}>
+                <Link to={`/admin/accessories/editAccessory/${phone.id}`} className={this.state.searchValue.includes(phone) ? 'link show' : 'hidden'}>
                     <PhoneList 
                         id = {phone.id}
                         name = {phone.name}
@@ -70,4 +73,4 @@ class Phones extends React.Component{
     }
 }
 
-export default Phones;
+export default EditAccessoryByPhone;
