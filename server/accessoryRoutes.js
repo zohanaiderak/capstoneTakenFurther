@@ -36,4 +36,12 @@ router.post('/', (req, res) => {
     })
   });
 
+router.patch('/:accessoryId', async(req,res)=>{
+  try{const updatedAccessory = await Post.updateOne({id: req.params.accessoryId},{$set:{...req.body}});
+  res.status(200).json(updatedAccessory);
+}catch(err){
+  console.log(err);
+}
+})
+
 module.exports = router;
