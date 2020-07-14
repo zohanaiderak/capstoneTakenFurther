@@ -15,10 +15,6 @@ var path = require('path');
 
 app.use(express.static(path.join(__dirname , 'build')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
 app.use(cors());
 
 app.use(express.json());
@@ -43,5 +39,9 @@ mongoose.connect(
   ()=>{
   console.log("connected to db!")
 })
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'client/build/index.html'));
+});
 
 app.listen(port, () => console.log(`listening on http://localhost:${port}`));
