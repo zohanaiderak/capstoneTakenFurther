@@ -13,7 +13,7 @@ const contact = require('./contact');
 const fs = require('fs');
 var path = require('path');
 
-app.use(express.static(path.join(__dirname , '../client/build')));
+app.use(express.static(path.join(__dirname , '/client/build')));
 
 app.use(cors());
 
@@ -41,7 +41,7 @@ mongoose.connect(
 })
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'../client/build/index.html'));
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
 app.listen(port, () => console.log(`listening on http://localhost:${port}`));
