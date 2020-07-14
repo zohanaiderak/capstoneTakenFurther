@@ -13,7 +13,7 @@ const contact = require('./contact');
 const fs = require('fs');
 var path = require('path');
 
-app.use(express.static(path.join(__dirname , '/client/build')));
+app.use(express.static(path.join(__dirname , '../client/build')));
 
 app.use(cors());
 
@@ -23,15 +23,15 @@ app.use(bodyParser.json());
 
 app.use(express.static('assets'));
 
-app.use('/phone', phoneRoutes );
+app.use('/api/phone', phoneRoutes );
 
-app.use('/accessor' , accessoryRoutes);
+app.use('/api/accessor' , accessoryRoutes);
 
-app.use('/send' , send);
+app.use('/api/send' , send);
 
-app.use('/contact' , contact)
+app.use('/api/contact' , contact)
 
-app.use('/upload', upload );
+app.use('/api/upload', upload );
 
 mongoose.connect(
   process.env.MONGODB_CONN,
@@ -41,7 +41,7 @@ mongoose.connect(
 })
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  res.sendFile(path.join(__dirname+'../client/build/index.html'));
 });
 
 app.listen(port, () => console.log(`listening on http://localhost:${port}`));
