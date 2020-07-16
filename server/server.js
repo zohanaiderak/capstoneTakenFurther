@@ -41,7 +41,7 @@ mongoose.connect(
 })
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'build/index.html'));
+  res.sendFile(path.join(__dirname, '/build/index.html'));
 });
 
 app.listen(port, () => console.log(`listening on http://localhost:${port}`));
