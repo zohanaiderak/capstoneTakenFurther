@@ -32,7 +32,7 @@ class AdminPhones extends React.Component{
     changeHandler=event=>{
         this.setState({
         selectedFile : event.target.files[0],
-        images : `${API_URL}/images/${event.target.files[0].name}`
+        images : `http://localhost:8080/images/${event.target.files[0].name}`
         })
     }
 
@@ -47,7 +47,7 @@ class AdminPhones extends React.Component{
         e.preventDefault();
         const data = new FormData()
         data.append('file', this.state.selectedFile)
-        console.log(this.state.selectedFile);
+        console.log(data);
         axios.post(`${API_URL}/upload`, data)
         .then(()=>alert("posted"))
         .catch((err)=>alert(err));
