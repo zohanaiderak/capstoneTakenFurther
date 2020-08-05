@@ -27,9 +27,9 @@ app.use('/api/phone', phoneRoutes );
 
 app.use('/api/accessor' , accessoryRoutes);
 
-app.use('/api/send' , send);
+// app.use('/api/send' , send);
 
-app.use('/api/contact' , contact)
+// app.use('/api/contact' , contact)
 
 app.use('/api/upload', upload );
 
