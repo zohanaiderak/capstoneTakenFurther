@@ -7,11 +7,13 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const phoneRoutes = require("./phoneRoutes");
 const accessoryRoutes = require("./accessoryRoutes");
-// const send = require('./send');
+const send = require('./send');
 const upload = require('./multer');
-// const contact = require('./contact');
+const contact = require('./contact');
 const fs = require('fs');
 var path = require('path');
+
+
 
 app.use(cors());
 
@@ -27,9 +29,9 @@ app.use('/api/phone', phoneRoutes );
 
 app.use('/api/accessor' , accessoryRoutes);
 
-// app.use('/api/send' , send);
+app.use('/api/send' , send);
 
-// app.use('/api/contact' , contact)
+app.use('/api/contact' , contact)
 
 app.use('/api/upload', upload );
 
