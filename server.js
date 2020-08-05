@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 8080;
 const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -13,7 +13,7 @@ const contact = require('./contact');
 const fs = require('fs');
 var path = require('path');
 
-app.use(express.static(path.join(__dirname , 'build')));
+
 
 app.use(cors());
 
@@ -22,6 +22,8 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 app.use(express.static('assets'));
+
+app.use(express.static(path.join(__dirname , '/client/build')));
 
 app.use('/api/phone', phoneRoutes );
 
@@ -41,7 +43,7 @@ mongoose.connect(
 })
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/build/index.html'));
+  res.sendFile(path.join(__dirname, '/client/build/index.html'));
 });
 
 app.listen(port, () => console.log(`listening on http://localhost:${port}`));
