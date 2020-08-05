@@ -13,8 +13,6 @@ const contact = require('./contact');
 const fs = require('fs');
 var path = require('path');
 
-
-
 app.use(cors());
 
 app.use(express.json());
