@@ -9,9 +9,13 @@ console.log(user);
 
 const transporter = nodemailer.createTransport({
   service: "Gmail",
+  secure: false,
   auth: {
       user: user,
       pass: password
+  },
+  tls: {
+    rejectUnauthorized: false
   }
 });
 
