@@ -14,21 +14,17 @@
   "dependencies": {
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
-    "concurrently": "^5.2.0",
     "cors": "^2.8.5",
     "dot-env": "0.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-router": "0.0.1",
-    "express-session": "^1.17.1",
-    "fs": "0.0.1-security",
     "helmet": "^3.23.1",
     "mongoose": "^5.9.27",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
     "nodemailer": "^6.4.8",
     "passport": "^0.4.1",
-    "passport-github": "^1.1.0",
+    "path": "^0.12.7",
     "smtp": "^0.1.4"
   }
 }
