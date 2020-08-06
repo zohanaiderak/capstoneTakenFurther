@@ -10,10 +10,7 @@ const accessoryRoutes = require("./accessoryRoutes");
 const send = require('./send');
 const upload = require('./multer');
 const contact = require('./contact');
-const fs = require('fs');
 var path = require('path');
-
-
 
 app.use(cors());
 
@@ -22,6 +19,8 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 app.use(express.static('assets'));
+
+app.use(express.static(path.join(__dirname , '/client/build')));
 
 app.use('/api/phone', phoneRoutes );
 
@@ -39,8 +38,6 @@ mongoose.connect(
   ()=>{
   console.log("connected to db!")
 })
-
-app.use(express.static(path.join(__dirname , '/client/build')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/client/build/index.html'));
