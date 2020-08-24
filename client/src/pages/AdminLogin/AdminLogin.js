@@ -170,8 +170,8 @@ class Login extends React.Component{
                 </div>
                 <Switch>
                     <Route path='/admin' exact component={Admin}/>
-                    <Route path='/admin/phones' exact component={SelectPhone}/>
                     <Route path='/admin/accessories' exact component={SelectAccessory}/>
+                    <Route path='/admin/phones' exact component={SelectPhone}/>
                     <Route path='/admin/phones/add' exact component={AdminPhones}/>
                     <Route path='/admin/phones/edit' exact component={EditPhones}/>
                     <Route path='/admin/phones/edit/:id' exact component={EditPhoneForm}/>
