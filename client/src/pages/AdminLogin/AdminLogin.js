@@ -86,6 +86,7 @@ class Login extends React.Component{
                 .then(res=> {
                     setInStorage('the_main_app' , {token : ""})
                     this.setState({
+                        signInError : res.data.message,
                         token : "",
                         isLoading: false
                     })}
@@ -125,40 +126,40 @@ class Login extends React.Component{
         if(!token){
             return(
                 <div className="form">
-                {
-                    (signInError) ? (
-                        <p>{signInError}</p>
-                    ) : (null)
-                }
-            <form className="form__container">
-                <span className="input-container">
-                    <label className ="uploadInput">Username :</label>
-                    <input 
-                        type="text" 
-                        name="username" 
-                        placeholder="Username" 
-                        className="uploadName" 
-                        value={username}
-                        onChange={this.changeHandler}>
-                    </input>
-                </span>
-                <span className="input-container">
-                    <label className ="uploadInput">Password :</label>
-                    <input 
-                        type="password" 
-                        name="password" 
-                        placeholder="Password" 
-                        className="uploadName" 
-                        value={password}
-                        onChange={this.changeHandler}>
-                    </input>
-                </span>
-                <div className="button__container">
-                    <button className="publishButton" type="button" onClick={this.handleLogin}>Login</button>
-                    <button className="publishButton cancel" onClick={this.cancel} type="button">CANCEL</button>
+                    {
+                        (signInError) ? (
+                            <h3>{signInError}</h3>
+                        ) : (null)
+                    }
+                <form className="form__container">
+                    <span className="input-container">
+                        <label className ="uploadInput">Username :</label>
+                        <input 
+                            type="text" 
+                            name="username" 
+                            placeholder="Username" 
+                            className="uploadName" 
+                            value={username}
+                            onChange={this.changeHandler}>
+                        </input>
+                    </span>
+                    <span className="input-container">
+                        <label className ="uploadInput">Password :</label>
+                        <input 
+                            type="password" 
+                            name="password" 
+                            placeholder="Password" 
+                            className="uploadName" 
+                            value={password}
+                            onChange={this.changeHandler}>
+                        </input>
+                    </span>
+                    <div className="button__container">
+                        <button className="publishButton" type="button" onClick={this.handleLogin}>Login</button>
+                        <button className="publishButton cancel" onClick={this.cancel} type="button">CANCEL</button>
+                    </div>
+                </form>
                 </div>
-            </form>
-            </div>
             )
         }
         return(

@@ -147,7 +147,7 @@ UserSession.find({
   } else {
     return res.send({
       success: true,
-      message: 'Good'
+      message: 'Verified'
     })
   }
 })
@@ -171,7 +171,7 @@ UserSession.findOneAndUpdate({
   }
     return res.send({
       success: true,
-      message: 'Good'
+      message: 'Successfully signed out'
     })
 })
 })
