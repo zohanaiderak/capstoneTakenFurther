@@ -30,8 +30,7 @@ class App extends React.Component {
       <BrowserRouter>
         {/* <Header /> */}
         {
-          (obj.token) ? (<><Header/><AdminLogin/></>)
-          : (<Header/>)
+          (obj.token) ? (<><Header/><AdminLogin/></>) : (<Header/>)
         }
         <Switch>
             <Route path='/' exact component={MainPage} />

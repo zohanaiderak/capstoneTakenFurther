@@ -66,7 +66,6 @@ class Login extends React.Component{
     }
 
     handleLogout = e =>{
-        e.preventDefault();
         this.setState({
             isLoading: true
         })
