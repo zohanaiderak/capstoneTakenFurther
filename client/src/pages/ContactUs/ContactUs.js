@@ -44,32 +44,32 @@ class Contact extends React.Component{
         return(
             <form className="form">
                 <div className="form__container">
-                <span className="input-container"><label className ="uploadInput">Name :</label>
+                <div className="input-container"><label className ="uploadInput">Name :</label>
                     <input className="uploadName"
                         type="text"
                         name="name"
                         onChange={this.updateForm}
                         value = {this.state.name}
                         placeholder="First &amp; Last Name"
-                    /></span>
+                    /></div>
                 
-                <span className="input-container"><label className ="uploadInput">E-mail :</label>
+                <div className="input-container"><label className ="uploadInput">E-mail :</label>
                     <input className="uploadName"
                         type="text"
                         name="email"
                         onChange={this.updateForm}
                         value = {this.state.email}
                         placeholder="xyz@email.com"
-                    /></span>
+                    /></div>
                 
-                <span className="input-container"><label className="uploadInput des">Description :</label>
+                <div className="input-container"><label className="uploadInput des">Description :</label>
                     <textarea className="uploadDescription"
                         type="text"
                         name="description"
                         onChange={this.updateForm}
                         value={this.state.description}
                         placeholder="Inquire anything or ask a question.">
-                    </textarea></span>
+                    </textarea></div>
                 
                 
                 <div className="button__container">

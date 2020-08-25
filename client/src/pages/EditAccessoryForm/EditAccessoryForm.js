@@ -59,24 +59,24 @@ class EditAccessoriesForm extends React.Component{
             <form className="form" >
                 <div className="form__container">
                 <h2 className="addPhone">EDIT</h2>
-                <span className="input-container"><label className ="uploadInput">Id :</label>
+                <div className="input-container"><label className ="uploadInput">Id :</label>
                     <input className="uploadName" name="phoneid" onChange={this.changeInput}></input>
-                </span>
-                <span className="input-container"><label className ="uploadInput">Name :</label>
+                </div>
+                <div className="input-container"><label className ="uploadInput">Name :</label>
                     <input className="uploadName" onChange={this.changeInput} name="name"></input>
-                </span>
-                <span className="input-container"><label className ="uploadInput">Description :</label>
+                </div>
+                <div className="input-container"><label className ="uploadInput">Description :</label>
                     <textarea className="uploadDescription" onChange={this.changeInput} name="description"></textarea>
-                </span>
-                <span className="input-container"><label className ="uploadInput">Quantity :</label>
+                </div>
+                <div className="input-container"><label className ="uploadInput">Quantity :</label>
                     <input className="uploadName" onChange={this.changeInput} name="quantity"></input>
-                </span>
-                <span className="input-container"><label className ="uploadInput">In Stock :</label>
+                </div>
+                <div className="input-container"><label className ="uploadInput">In Stock :</label>
                 <Switch height={24} width={40} onChange={this.handleChange} checked={this.state.isInstock} />
-                </span>
-                <span className="input-container"><label className ="uploadInput"> Upload Image :</label>
+                </div>
+                <div className="input-container"><label className ="uploadInput"> Upload Image :</label>
                 <input type="file" name="image" onChange={this.changeHandler}/>
-                </span>
+                </div>
                 <div className="button__container"><button className="publishButton" type="submit" onClick={this.submit}>Submit</button></div>
                 </div>
             </form>

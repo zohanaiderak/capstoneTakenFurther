@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'; 
 import './Header.scss'
 import Logo from '../../assets/Images/msnap-logo.png';
-
+import { getFromStorage, setInStorage} from '../../utils/storage'
 class Header extends React.Component {
   state = {
     active: ""
@@ -31,6 +31,15 @@ class Header extends React.Component {
     }
   }
 
+  logoutButton = () => {
+    const obj = getFromStorage('the_main_app');
+        if(obj && obj.token){
+          return true;
+        } else {
+          return false;
+        }
+  }
+
   changeToHome = e => {
       this.setState({
           active: ""
@@ -56,7 +65,6 @@ class Header extends React.Component {
   }
 
   render() {
-    console.log(window.location.hostname + window.location.pathname);
     return (
       <header className="header">
         <Link to="/" onClick={this.changeToHome}>

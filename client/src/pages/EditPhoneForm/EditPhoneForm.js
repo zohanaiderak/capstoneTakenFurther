@@ -57,7 +57,7 @@ class EditForm extends React.Component{
             images: this.state.images
         };
         console.log(phoneData);
-        axios.patch(`${API_URL}/phone/${this.state.id}` , phoneData)
+        axios.patch(`${API_URL}/pdiv/${this.state.id}` , phoneData)
             .then(()=>alert("posted phones data"))
             .catch((err)=>alert(err))
     }
@@ -66,16 +66,25 @@ class EditForm extends React.Component{
         return(
             <form className="form" >
                 <div className="form__container">
-                <h2 className="addPhone">EDIT</h2>
-                <span className="input-container"><label className ="uploadInput">Id :</label>
-                    <input className="uploadName" name="id" onChange={this.changeInput}></input></span>
-                <span className="input-container"><label className ="uploadInput">Name :</label>
-                    <input className="uploadName" onChange={this.changeInput} name="name"></input></span>
-                <span className="input-container"><label className ="uploadInput">Comapny :</label>
-                    <input className="uploadName" onChange={this.changeInput} name="company"></input></span>
-                <span className="input-container"><label className ="uploadInput"> Upload Image :</label>
-                <input type="file" name="images" onChange={this.changeHandler}/></span> 
-                <div className="button__container"><button className="publishButton" type="submit" onClick={this.submit}>Submit</button></div>
+                    <h2 className="addPhone">EDIT</h2>
+                    <div className="input-container">
+                        <label className ="uploadInput">Id :</label>
+                        <input className="uploadName" name="id" onChange={this.changeInput}></input>
+                    </div>
+                    <div className="input-container">
+                        <label className ="uploadInput">Name :</label>
+                        <input className="uploadName" onChange={this.changeInput} name="name"></input>
+                    </div>
+                    <div className="input-container">
+                        <label className ="uploadInput">Comapny :</label>
+                        <input className="uploadName" onChange={this.changeInput} name="company"></input>
+                    </div>
+                    <div className="input-container">
+                        <label className ="uploadInput"> Upload Image :</label>
+                        <input type="file" name="images" onChange={this.changeHandler}/></div> 
+                    <div className="button__container">
+                        <button className="publishButton" type="submit" onClick={this.submit}>Submit</button>
+                    </div>
                 </div>
             </form>
         )

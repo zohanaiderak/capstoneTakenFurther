@@ -65,32 +65,32 @@ class Order extends React.Component{
                 <div className="form__container">
                 <h3 className="order-title">Click Confirm to have the item reserved in store.</h3>
                 <p className="order-step">Once confirmed you will recieve an email saying the item is ready for pickup.</p>
-                <span className="input-container"><label className ="uploadInput">Name :</label>
+                <div className="input-container"><label className ="uploadInput">Name :</label>
                     <input className="uploadName"
                         type="text"
                         name="name"
                         onChange={this.updateForm}
                         value = {this.state.name}
                         placeholder="First &amp; Last Name"
-                    /></span>
+                    /></div>
                 
-                <span className="input-container"><label className ="uploadInput">E-mail :</label>
+                <div className="input-container"><label className ="uploadInput">E-mail :</label>
                     <input className="uploadName"
                         type="text"
                         name="email"
                         onChange={this.updateForm}
                         value = {this.state.email}
                         placeholder="xyz@email.com"
-                    /></span>
+                    /></div>
                 
-                <span className="input-container"><label className="uploadInput des">Description :</label>
+                <div className="input-container"><label className="uploadInput des">Description :</label>
                     <textarea className="uploadDescription"
                         type="text"
                         name="description"
                         onChange={this.updateForm}
                         value={this.state.description}
                         placeholder="Add a text for eg: quantity or time when you will be picking it up">
-                    </textarea></span>
+                    </textarea></div>
                 
                 
                 <div className="button__container">

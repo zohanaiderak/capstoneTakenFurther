@@ -1,20 +1,11 @@
 import React from 'react';
 import axios from 'axios';
-import { Route , Link} from 'react-router-dom';
-import Admin from '../Admin/Admin';
-import AdminPhones from '../AdminPhones/AdminPhones';
-import AdminAccessories from '../AdminAccessories/AdminAccessories';
-import SelectPhone from '../SelectPhone/SelectPhone';
-import SelectAccessory from '../SelectAccessory/SelectAccessory';
-import EditPhones from '../EditPhones/EditPhones';
-import EditPhoneForm from '../EditPhoneForm/EditPhoneForm';
-import EditAccessories from '../EditAccessories/EditAccessories';
-import EditAccessoryByPhone from '../EditAccessoryByPhone/EditAccessoryByPhone';
-import EditAccessoryForm from '../EditAccessoryForm/EditAccessoryForm';
+import { Link, withRouter} from 'react-router-dom';
 import { getFromStorage, setInStorage} from '../../utils/storage'
-import { BrowserRouter, Switch } from 'react-router-dom';
+
 
 const API_URL = process.env.REACT_APP_API_URL;
+
 
 class Login extends React.Component{
     state={
@@ -101,6 +92,7 @@ class Login extends React.Component{
                 isLoading: false
             })
         }
+        this.props.history.push('/adminLogin');
     }
 
     changeHandler = (e) =>{
@@ -132,7 +124,7 @@ class Login extends React.Component{
                         ) : (null)
                     }
                 <form className="form__container">
-                    <span className="input-container">
+                    <div className="input-container">
                         <label className ="uploadInput">Username :</label>
                         <input 
                             type="text" 
@@ -142,8 +134,8 @@ class Login extends React.Component{
                             value={username}
                             onChange={this.changeHandler}>
                         </input>
-                    </span>
-                    <span className="input-container">
+                    </div>
+                    <div className="input-container">
                         <label className ="uploadInput">Password :</label>
                         <input 
                             type="password" 
@@ -153,7 +145,7 @@ class Login extends React.Component{
                             value={password}
                             onChange={this.changeHandler}>
                         </input>
-                    </span>
+                    </div>
                     <div className="button__container">
                         <button className="publishButton" type="button" onClick={this.handleLogin}>Login</button>
                         <button className="publishButton cancel" onClick={this.cancel} type="button">CANCEL</button>
@@ -163,26 +155,12 @@ class Login extends React.Component{
             )
         }
         return(
-            <BrowserRouter>
                 <div className="form">
                     <Link to="/admin" className="publishButton admin__phones--button">Home</Link>
                     <Link to="/adminLogin" className="publishButton admin__accessories--button" onClick={this.handleLogout}>Logout</Link>
                 </div>
-                <Switch>
-                    <Route path='/admin' exact component={Admin}/>
-                    <Route path='/admin/accessories' exact component={SelectAccessory}/>
-                    <Route path='/admin/phones' exact component={SelectPhone}/>
-                    <Route path='/admin/phones/add' exact component={AdminPhones}/>
-                    <Route path='/admin/phones/edit' exact component={EditPhones}/>
-                    <Route path='/admin/phones/edit/:id' exact component={EditPhoneForm}/>
-                    <Route path='/admin/accessories/add' exact component={AdminAccessories}/>
-                    <Route path='/admin/accessories/editAccessory' exact component={EditAccessoryByPhone}/>
-                    <Route path='/admin/accessories/editAccessory/:id' exact component={EditAccessories}/>
-                    <Route path='/admin/accessories/editAccessory/:id/:id' exact component={EditAccessoryForm}/>
-                </Switch> 
-            </BrowserRouter>
         )
     }
 }
 
-export default Login;
+export default withRouter(Login);
