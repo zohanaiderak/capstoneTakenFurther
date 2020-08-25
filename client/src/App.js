@@ -28,10 +28,10 @@ class App extends React.Component {
     const obj = JSON.parse(json);
   return (
       <BrowserRouter>
-        <Header />
+        {/* <Header /> */}
         {
-          (obj.token) ? (<AdminLogin/>)
-          : null
+          (obj.token) ? (<><Header/><AdminLogin/></>)
+          : (<Header/>)
         }
         <Switch>
             <Route path='/' exact component={MainPage} />
@@ -45,15 +45,15 @@ class App extends React.Component {
               (obj.token)? (
                 <Switch>
                 <Route exact path='/admin' component={Admin}/>
-                <Route path='/admin/accessories' component={SelectAccessory}/>
-                <Route path='/admin/phones' exact component={SelectPhone}/>
-                <Route path='/admin/phones/add' exact component={AdminPhones}/>
-                <Route path='/admin/phones/edit' exact component={EditPhones}/>
-                <Route path='/admin/phones/edit/:id' exact component={EditPhoneForm}/>
-                <Route path='/admin/accessories/add' exact component={AdminAccessories}/>
-                <Route path='/admin/accessories/editAccessory' exact component={EditAccessoryByPhone}/>
-                <Route path='/admin/accessories/editAccessory/:id' exact component={EditAccessories}/>
-                <Route path='/admin/accessories/editAccessory/:id/:id' exact component={EditAccessoryForm}/>
+                <Route exact path='/admin/accessories' component={SelectAccessory}/>
+                <Route exact path='/admin/phones' component={SelectPhone}/>
+                <Route exact path='/admin/phones/add'  component={AdminPhones}/>
+                <Route exact path='/admin/phones/edit'  component={EditPhones}/>
+                <Route  path='/admin/phones/edit/:id'  component={EditPhoneForm}/>
+                <Route exact path='/admin/accessories/add'  component={AdminAccessories}/>
+                <Route exact path='/admin/accessories/editAccessory'  component={EditAccessoryByPhone}/>
+                <Route exact path='/admin/accessories/editAccessory/:id'  component={EditAccessories}/>
+                <Route exact path='/admin/accessories/editAccessory/:id/:id'  component={EditAccessoryForm}/>
                 </Switch>
               )
               : (<Redirect to="/adminLogin"/>)
