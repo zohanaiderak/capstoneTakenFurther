@@ -60,9 +60,8 @@ class Login extends React.Component{
                     signInError: res.data.message,
                     isLoading: false
                 })
-            }
-               
-            )
+            })
+        setTimeout(()=>{window.location.reload(true)}, 100);
     }
 
     handleLogout = e =>{
@@ -92,6 +91,7 @@ class Login extends React.Component{
             })
         }
         this.props.history.push('/adminLogin');
+        setTimeout(()=>{window.location.reload(true)}, 100);
     }
 
     changeHandler = (e) =>{
