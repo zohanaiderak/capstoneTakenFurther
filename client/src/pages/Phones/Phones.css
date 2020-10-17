@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "Avenir-Bold";
+  src: url("../assets/_global-font/AvenirNextProLT/Linotype - AvenirNextLTPro-Bold.otf"), url("../assets/_global-font/AvenirNextProLT/Alternative-files/Linotype - Avenir Next LT Pro Bold.ttf");
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/_global-font/AvenirNextProLT/Linotype - AvenirNextLTPro-Regular.otf"), url("../assets/_global-font/AvenirNextProLT/Alternative-files/Linotype - Avenir Next LT Pro.ttf");
+}
+
+@font-face {
+  font-family: "Avenir-Medium";
+  src: url("../assets/_global-font/AvenirNextProLT/Linotype - AvenirNextLTPro-Medium.otf"), url("../assets/_global-font/AvenirNextProLT/Alternative-files/Linotype - Avenir Next LT Pro Medium.ttf");
+}
+
+@font-face {
+  font-family: "Avenir-demi";
+  src: url("../assets/_global-font/AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.otf"), url("../assets/_global-font/AvenirNextProLT/Alternative-files/Linotype - Avenir Next LT Pro Demi.ttf");
+}
+
+@font-face {
+  font-family: "Avenir-Light";
+  src: url("../assets/_global-font/AvenirNextProLT/Linotype - AvenirNextLTPro-Light.otf"), url("../assets/_global-font/AvenirNextProLT/Alternative-files/Linotype - Avenir Next LT Pro Light.ttf");
+}
+
+.hidden {
+  display: none;
+}
+
+.link {
+  width: 18%;
+  min-width: 180px;
+  height: 350px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  border-radius: 5px;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 36px;
+  -webkit-box-shadow: 7px 7px rgba(50, 50, 50, 0.3);
+          box-shadow: 7px 7px rgba(50, 50, 50, 0.3);
+}
+
+.link:hover {
+  -webkit-transform: translate(-4px, -4px);
+          transform: translate(-4px, -4px);
+}
+
+.link:active {
+  -webkit-box-shadow: 2px 2px rgba(50, 50, 50, 0.7);
+          box-shadow: 2px 2px rgba(50, 50, 50, 0.7);
+  -webkit-transform: translate(4px, 4px);
+          transform: translate(4px, 4px);
+}
+
+.phones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 10rem;
+  padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .phones {
+    margin-top: 5rem;
+    padding: 0 40px;
+  }
+}
+
+.phones__title {
+  margin-top: 48px;
+  font-weight: 900;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.phones__search {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid #afafaf;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .phones__search {
+    width: 220px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
+.phones__list {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+/*# sourceMappingURL=Phones.css.map */

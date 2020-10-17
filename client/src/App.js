@@ -23,15 +23,30 @@ import { getFromStorage, setInStorage} from './utils/storage'
 
 
 class App extends React.Component {
-  render(){
+  state = {
+    obj : ""
+  }
+  componentDidMount(){
     const json = localStorage.the_main_app;
-    const obj = JSON.parse(json);
+    if(json){
+      this.setState({
+        obj : JSON.parse(json)
+      }) 
+    }else{
+      this.setState({
+        obj : false
+      })
+    }
+  }
+    
+  render(){
+    console.log(this.state);
   return (
       <BrowserRouter>
-        {/* <Header /> */}
+      <Header/>
         {
-          (obj.token) ? (<><Header/><AdminLogin/></>) : (<Header/>)
-        }
+          (this.state.obj.token) ? (<AdminLogin/>) : null
+        } 
         <Switch>
             <Route path='/' exact component={MainPage} />
             <Route path='/repair-form' component={Repair} />
@@ -39,9 +54,9 @@ class App extends React.Component {
             <Route path='/phones' exact component={Phones} />
             <Route path='/phones/:id' exact component={Accessories} />
             <Route path='/phones/:id/:id' component={Order}/>
-            {(!obj.token) ? (<Route path='/adminLogin' exact component={AdminLogin}/>) : null}
+            {(!this.state.obj.token) ? (<Route path='/adminLogin' exact component={AdminLogin}/>) : null}
             {
-              (obj.token)? (
+              (this.state.obj.token)? (
                 <Switch>
                 <Route exact path='/admin' component={Admin}/>
                 <Route exact path='/admin/accessories' component={SelectAccessory}/>
