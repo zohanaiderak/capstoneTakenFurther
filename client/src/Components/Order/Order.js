@@ -46,17 +46,17 @@ class Order extends React.Component{
     handleClick = (e) =>{
         e.preventDefault();
         console.log(this.state)
-        axios.post(`${API_URL}/send`, this.state)
+            axios.post(`${API_URL}/send`, this.state)
             .then(()=>{
                 alert("ORDER SUBMITTED")
                 console.log(this.state);
             })
             .catch(()=> alert('Please Try Again'))
-        this.setState({
-            "name": "",
-            "email": "",
-            "description": ""
-        })
+            this.setState({
+                "name": "",
+                "email": "",
+                "description": ""
+            })
     }
 
     render(){
@@ -71,6 +71,7 @@ class Order extends React.Component{
                         name="name"
                         onChange={this.updateForm}
                         value = {this.state.name}
+                        required
                         placeholder="First &amp; Last Name"
                     /></div>
                 
@@ -80,6 +81,7 @@ class Order extends React.Component{
                         name="email"
                         onChange={this.updateForm}
                         value = {this.state.email}
+                        required
                         placeholder="xyz@email.com"
                     /></div>
                 
@@ -88,6 +90,7 @@ class Order extends React.Component{
                         type="text"
                         name="description"
                         onChange={this.updateForm}
+                        required
                         value={this.state.description}
                         placeholder="Add a text for eg: quantity or time when you will be picking it up">
                     </textarea></div>

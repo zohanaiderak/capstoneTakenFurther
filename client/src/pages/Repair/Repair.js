@@ -42,7 +42,7 @@ class Repair extends React.Component{
 
     render(){
         return(
-            <form className="form">
+            <form className="form" onSubmit={this.handleClick}>
                 <div className="form__container">
                 <div className="input-container"><label className ="uploadInput">Name :</label>
                     <input className="uploadName"
@@ -50,6 +50,7 @@ class Repair extends React.Component{
                         name="name"
                         onChange={this.updateForm}
                         value = {this.state.name}
+                        required
                         placeholder="First &amp; Last Name"
                     /></div>
                 
@@ -59,6 +60,7 @@ class Repair extends React.Component{
                         name="email"
                         onChange={this.updateForm}
                         value = {this.state.email}
+                        required
                         placeholder="xyz@email.com"
                     /></div>
                 
@@ -68,12 +70,13 @@ class Repair extends React.Component{
                         name="description"
                         onChange={this.updateForm}
                         value={this.state.description}
+                        required
                         placeholder="Phone Name and Tell us more about the damage.">
                     </textarea></span>
                 
                 
                 <div className="button__container">
-                    <button className="publishButton" type="button" onClick={this.handleClick}>REQUEST REPAIR</button>
+                    <button className="publishButton" type="submit">REQUEST REPAIR</button>
                     <button className="publishButton cancel" onClick={this.cancel} type="button">CANCEL</button>
                 </div>
                 </div>
