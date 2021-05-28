@@ -11,6 +11,9 @@
     @include tablet{
         margin-top: 5rem;
     }
+    @include desktop{
+      margin-top: 20rem;
+    }
     @include hero-height;
     &__about-us{
         background: rgba($color: #000000, $alpha: 0.5);
